@@ -1,0 +1,20 @@
+version: '3'
+services:
+  blog:
+    image: blog-service:latest
+    container_name: blog-service
+    ports:
+      - "8090:8090"
+    networks:
+      - adripoli
+
+  client-blog:
+    image: blog-ui-service:latest
+    container_name: blog-ui
+    ports:
+      - "8091:8091"
+    networks:
+      - adripoli
+
+networks:
+  adripoli:
